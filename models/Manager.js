@@ -1,6 +1,6 @@
-const Sequelize = require("sequelize");
+const Sequelize = require("Sequelize");
 
-module.exports = Sequelize.define("Managers", {
+module.exports = sequelize.define("Managers", {
     id: {
         type: Sequelize.INTEGER(11),
         allowNull: false,
