@@ -1,4 +1,4 @@
-const Sequelize = require("Sequelize");
+const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize("erp", "root", "", {
     host: "127.0.0.1",
