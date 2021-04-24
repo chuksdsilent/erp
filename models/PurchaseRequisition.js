@@ -1,6 +1,6 @@
 
 
-const Sequelize = require("Sequelize");
+const Sequelize = require("sequelize");
 
 
 module.exports = sequelize.define("PurchaseRequisition", {
