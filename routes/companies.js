@@ -9,7 +9,7 @@ const { nanoid } = require('nanoid');
 // @router  GET api/companies
 // @desc    Get all companies
 // @access  Public
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         Comapnies.findAll({})
             .then(function (result) {
