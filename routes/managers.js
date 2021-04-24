@@ -12,8 +12,16 @@ const { nanoid } = require('nanoid');
 // @desc    Get all admin
 // @access  Public
 router.get('/', async (req, res) => {
-    const manager = await Managers.find({}).sort({ date: -1 }).select('-password');
-    res.json(manager);
+    try {
+        Managers.findAll({})
+            .then(function (result) {
+                return res.json(result);
+            });
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Server Error")
+    }
 });
 
 // @router  POST api/admin

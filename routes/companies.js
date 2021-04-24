@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const company = require("../models/Companies");
 const auth = require("../middleware/auth");
 const { check, validationResult } = require('express-validator');
 const Comapnies = require("../models/Companies");
