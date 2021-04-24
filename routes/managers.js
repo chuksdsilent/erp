@@ -12,7 +12,7 @@ const { nanoid } = require('nanoid');
 // @desc    Get all admin
 // @access  Public
 router.get('/', async (req, res) => {
-    const manager = await Manager.find({}).sort({ date: -1 }).select('-password');
+    const manager = await Managers.find({}).sort({ date: -1 }).select('-password');
     res.json(manager);
 });
 
