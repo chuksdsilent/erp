@@ -178,17 +178,29 @@ router.put('/:id', async (req, res) => {
     if (email) fields.email = email;
     if (phoneNo) fields.phoneNo = phoneNo;
 
+
+
     try {
+        const selector = {
+            where: {
+                id: req.params.id
+            }
+        };
 
-        newContacts = await Contacts.findByIdAndUpdate(req.params.id,
-            { $set: fields },
-            { new: true });
 
-        return res.json(newContacts)
+        Contacts.findByIdAndUpdate(
+            fields,
+            selector
+        ).then(function (result) {
+            return res.status(200).json({ "msg": "Contacts Updated" });
+        });
+
+
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Server Error")
+        res.status(500).send("Server Error");
     }
+
 
 });
 
