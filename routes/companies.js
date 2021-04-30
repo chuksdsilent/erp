@@ -133,7 +133,7 @@ router.put('/:id', auth, async (req, res) => {
             where: {
                 code: req.params.id
             }
-        };
+        }
 
 
         Comapnies.update(
