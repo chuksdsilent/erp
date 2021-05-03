@@ -6,12 +6,13 @@ const sequelize = new Sequelize("erp", "root", "", {
     operator: false
 });
 
-if (sequelize) console.log("Database Connected...");
-
+sequelize.authenticate().then(() => { console.log("Database is connected...") }).catch((err) => console.log("Unable to connect ", err))
 sequelize.sync({
-    logging: console.log,
-    force: true
+    logging: console.log
+}).then(result => {
+    console.log(result);
 })
+    .catch(err => console.log(err));
 module.exports = sequelize;
 
 global.sequelize = sequelize;
