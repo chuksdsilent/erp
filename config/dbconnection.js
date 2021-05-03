@@ -7,6 +7,11 @@ const sequelize = new Sequelize("erp", "root", "", {
 });
 
 if (sequelize) console.log("Database Connected...");
+
+sequelize.sync({
+    logging: console.log,
+    force: true
+})
 module.exports = sequelize;
 
 global.sequelize = sequelize;
