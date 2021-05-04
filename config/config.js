@@ -14,7 +14,7 @@ module.exports = {
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "mysql://evrcr40v9jkh0qx6:mpnnkqs658szmn6r@pxukqohrckdfo4ty.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/e6yms3ncgcvzfkcl",
+    "use_env_variable": "mysql://bdcab13829b218:4be2bfb8@us-cdbr-east-03.cleardb.com/heroku_84224a7d71fb79b?reconnect=true",
     "dialect": "mysql"
   }
 }
