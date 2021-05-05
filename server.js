@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const connectMysqlDB = require("./config/dbconnection")
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json({ extended: false }));
 // Define Routes
 app.use("/api/managers", require('./routes/managers'));
 app.use("/api/auth", require('./routes/auth'));
+
 app.use("/api/branches", require('./routes/branches'));
 app.use("/api/employee-auth", require('./routes/employeeAuth'));
 app.use("/api/employees", require('./routes/employees'));
